@@ -1,0 +1,21 @@
+import pytest
+from flow.input_management import user_select_betting_mode
+
+
+class TestUserChoiceMode:
+    def test_unkown_mode(self, monkeypatch):
+        monkeypatch.setattr("builtins.input", lambda _: "Unknown")
+        with pytest.raises(Exception):
+            user_select_betting_mode()
+
+    def test_read_mode(self, monkeypatch):
+        monkeypatch.setattr("builtins.input", lambda _: "read")
+        assert user_select_betting_mode() == "read"
+
+    def test_place_mode(self, monkeypatch):
+        monkeypatch.setattr("builtins.input", lambda _: "place")
+        assert user_select_betting_mode() == "place"
+
+    def test_modify_mode(self, monkeypatch):
+        monkeypatch.setattr("builtins.input", lambda _: "modify")
+        assert user_select_betting_mode() == "modify"
