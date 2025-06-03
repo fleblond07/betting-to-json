@@ -2,6 +2,8 @@ from pydantic.dataclasses import dataclass
 from enum import Enum
 from typing import Optional
 
+from pydantic.main import BaseModel
+
 
 class Strategy(Enum):
     SAFE = "safe"
@@ -14,8 +16,7 @@ class PossibleOutcome(Enum):
     DRAW = "draw"
 
 
-@dataclass
-class BettingElement:
+class BettingElement(BaseModel):
     id: int
     team_1: str
     team_2: str
@@ -25,3 +26,7 @@ class BettingElement:
     choice: Optional[PossibleOutcome]
     result: Optional[PossibleOutcome]
     strategy: Strategy
+
+
+class BettingList(BaseModel):
+    bets: list[BettingElement]
