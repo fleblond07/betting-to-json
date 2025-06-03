@@ -12,3 +12,12 @@ repos:
       - id: mypy
         name: mypy type checker
         additional_dependencies: []
+
+  - repo: local
+    hooks:
+      - id: pytest
+        name: "Run pytest"
+        entry: poetry run pytest
+        language: system
+        types: [python]
+        pass_filenames: false

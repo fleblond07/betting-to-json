@@ -13,5 +13,3 @@ def user_select_betting_mode():
             return start_place_mode()
         case BettingMode.MODIFY:
             return start_modify_mode()
-        case _:
-            raise Exception("Unkown choice inputed for read/place/modify")

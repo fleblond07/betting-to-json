@@ -1,7 +1,7 @@
-from src.input_management import user_select_betting_mode
+from flow.input_management import user_select_betting_mode
 ## TODO:
-# Init all the stuff
 # Read bets
+## Display lists of all bets
 # Write bets
 # Total profit for each strategies
 # Weekly totals
@@ -11,7 +11,6 @@ from src.input_management import user_select_betting_mode
 
 def main():
     try:
-        print("Hi!")
         user_select_betting_mode()
     except Exception as e:
         print(f"Oops something wrong happened: {e}")
