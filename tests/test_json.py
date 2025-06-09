@@ -30,12 +30,12 @@ VALID_BETTING_LIST_DICT: dict[str, list[Any]] = {
     ]
 }
 
-EMPTY_BETTING_LIST_DICT: dict = {"risky": [{}]}
+EMPTY_BETTING_LIST_DICT: dict = {"risky": []}
 
 
 class TestJsonFunctionnalities:
     def test_open_valid_json_file(self):
-        data = read_json_file("json/default_json.json")
+        data = read_json_file("app/json/default_json.json")
         assert data is not None
 
     def test_open_invalid_json_file(self):
@@ -44,7 +44,7 @@ class TestJsonFunctionnalities:
 
     def test_empty_json_file(self):
         with pytest.raises(UnknownError):
-            read_json_file("json/empty_json.json")
+            read_json_file("app/json/empty_json.json")
 
     def test_load_valid_betting_list(self):
         result = json_to_betting_list(VALID_BETTING_LIST_DICT, Strategy("risky"))

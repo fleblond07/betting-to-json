@@ -1,6 +1,5 @@
 from flow.input_management import user_select_betting_mode
 ## TODO:
-# Read bets
 ## Display lists of all bets
 # Write bets
 # Total profit for each strategies
