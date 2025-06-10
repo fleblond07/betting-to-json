@@ -3,7 +3,7 @@ from flow.input_management import user_select_betting_mode
 
 class TestUserChoiceMode:
     def test_read_mode(self, monkeypatch):
-        inputs = iter(["read", "app/json/default_json.json"])
+        inputs = iter(["read", None])
         monkeypatch.setattr("builtins.input", lambda _: next(inputs))
         user_select_betting_mode()
 

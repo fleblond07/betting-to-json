@@ -8,7 +8,7 @@ def user_select_betting_mode():
     mode = input("What would you like to do (read, place, modify)")
     match BettingMode(mode):
         case BettingMode.READ:
-            filename = input("What is the filename you're using?")
+            filename = input("What is the filename you're using?") or None
             return start_read_mode(filename=filename)
         case BettingMode.PLACE:
             return start_place_mode()

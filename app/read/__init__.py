@@ -9,8 +9,12 @@ console = Console()
 
 
 def start_read_mode(
-    filename: str = "json/default_json.json", strategy: Strategy = Strategy.ALL
+    filename: Optional[str] = "app/json/default_json.json",
+    strategy: Strategy = Strategy.ALL,
 ):
+    if not filename:
+        filename = "app/json/default_json.json"
+
     data = read_json_file(file_name=filename)
 
     betting_list: Optional[BettingList] = json_to_betting_list(

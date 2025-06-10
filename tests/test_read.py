@@ -47,7 +47,7 @@ EXPECTED_ALL_DICT = [
 
 def test_start_happy_path():
     expected = BettingList(bets=[BettingElement(**row) for row in EXPECTED_ALL_DICT])
-    actual = start_read_mode(filename="app/json/default_json.json")
+    actual = start_read_mode()
     assert actual == expected
 
 
