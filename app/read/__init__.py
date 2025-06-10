@@ -23,9 +23,9 @@ def start_read_mode(
     if not betting_list or not betting_list.bets:
         return None
 
-    table = generate_table_from_betting_list(
+    table_summary, table_total = generate_table_from_betting_list(
         betting_list=betting_list, table_title="Bet history"
     )
-
-    console.print(table)
+    console.print(table_total)
+    console.print(table_summary)
     return betting_list

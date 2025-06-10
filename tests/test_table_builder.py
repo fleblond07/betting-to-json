@@ -6,11 +6,11 @@ DEFAULT_BETTING_LIST = BettingList(bets=DEFAULT_BETTING_ELEMENTS)
 
 
 def test_build_default_table():
-    actual_table = generate_table_from_betting_list(
+    table_summary, table_total = generate_table_from_betting_list(
         betting_list=DEFAULT_BETTING_LIST, table_title="Toto"
     )
-    assert actual_table.title == "Toto"
-    assert [column.header.lower() for column in actual_table.columns] == list(
+    assert table_summary.title == "Toto"
+    assert [column.header.lower() for column in table_summary.columns] == list(
         BettingElement.model_fields.keys()
     )
-    assert len(actual_table.rows) == 2
+    assert len(table_summary.rows) == 2
