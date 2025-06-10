@@ -1,10 +1,10 @@
 import json
-from typing import Any, Optional
+from typing import Any
 
 from common.exception import UnknownError
 
 
-def read_json_file(file_name: str) -> Optional[dict[str, Any]]:
+def read_json_file(file_name: str) -> dict[str, Any]:
     with open(file_name, "r") as file:
         data = json.load(file)
 

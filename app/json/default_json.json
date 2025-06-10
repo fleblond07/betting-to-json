@@ -23,5 +23,6 @@
       "result": "team_1",
       "choice": "team_1"
     }
-  ]
+  ],
+  "empty": [{}]
 }

@@ -7,6 +7,8 @@ from pydantic.main import BaseModel
 class Strategy(Enum):
     SAFE = "safe"
     RISKY = "risky"
+    EMPTY = "empty"
+    ALL = "all"
 
 
 class PossibleOutcome(Enum):

@@ -12,6 +12,6 @@ def generate_table_from_betting_list(
         table.add_column(key.capitalize())
 
     for bet in betting_list.bets:
-        table.add_row(*[str(value) for value in bet.dict().values()])
+        table.add_row(*[str(value) for value in bet.model_dump().values()])
 
     return table

@@ -8,15 +8,15 @@ from rich.console import Console
 console = Console()
 
 
-def start_read_mode(filename: str = "json/default_json.json"):
-    data = read_json_file(file_name="json/default_json.json")
-    if not data:
-        return None
+def start_read_mode(
+    filename: str = "json/default_json.json", strategy: Strategy = Strategy.ALL
+):
+    data = read_json_file(file_name=filename)
 
     betting_list: Optional[BettingList] = json_to_betting_list(
-        content_to_load=data, strategy_name=Strategy.RISKY
+        content_to_load=data, strategy_name=strategy
     )
-    if not betting_list:
+    if not betting_list or not betting_list.bets:
         return None
 
     table = generate_table_from_betting_list(
