@@ -1,11 +1,4 @@
 from flow.input_management import user_select_betting_mode
-## TODO:
-## Display lists of all bets
-# Write bets
-# Total profit for each strategies
-# Weekly totals
-# Presentation screen
-# JSON TO MD
 
 
 def main():
